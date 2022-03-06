@@ -8,7 +8,7 @@ import joblib
 import numpy as np
 import sklearn.metrics as metrics
 import math
-
+import mlflow
 
 STAGE = "Four"
 
@@ -55,6 +55,11 @@ def main(config_path):
 
     precision, recall, prc_threshold = metrics.precision_recall_curve(labels, predictions)
     
+    mlflow.log_metric("avg_prec", avg_prec)
+    mlflow.log_metric("roc_auc", roc_auc)
+
+
+
     nth_point = math.ceil(len(prc_threshold)/1000)
     prc_points = list(zip(precision, recall, prc_threshold))[::nth_point]
 
