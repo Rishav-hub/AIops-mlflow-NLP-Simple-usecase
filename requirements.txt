@@ -1,7 +1,5 @@
 ### dependency
 tqdm
-dvc
-dvc[s3]
 pandas
 numpy
 Scipy
