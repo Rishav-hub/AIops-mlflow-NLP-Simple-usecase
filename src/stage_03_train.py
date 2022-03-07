@@ -55,7 +55,7 @@ def main(config_path, params_path):
 
     # joblib.dump(model, model_path)
 
-    mlflow.sklearn.log_model(model, artifact_path=artifacts["MODEL_NAME"])
+    mlflow.sklearn.log_model(model, artifact_path=artifacts["MODEL_NAME"], registered_model_name= "Model_one")
 
 if __name__ == '__main__':
     args = argparse.ArgumentParser()
