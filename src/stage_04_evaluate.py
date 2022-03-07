@@ -83,7 +83,7 @@ def main(config_path):
 
     save_json(ROC_json_path, roc_data)
 
-
+    mlflow.sklearn.eval_and_log_metrics(model, predictions, labels, prefix="eval_")
 
 
 
